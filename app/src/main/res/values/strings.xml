@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">SimonDice</string>
+
+    <string name="Saludo">HOLAS</string>
+
+    <string name="blue">Azul</string>
+    <string name="yellow">Amarillo</string>
+    <string name="red">Rojo</string>
+    <string name="green">Verde</string>
+    <string name="btnIniciar">Iniciar</string>
+
 </resources>

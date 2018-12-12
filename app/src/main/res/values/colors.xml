@@ -3,4 +3,10 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    //Mis colores
+    <color name="ColorRojo">#FF0000</color>
+    <color name="ColorVerde">#00FF00</color>
+    <color name="ColorAzul">#0000FF </color>
+    <color name="ColorAmarillo">#FFFF00</color>
 </resources>
