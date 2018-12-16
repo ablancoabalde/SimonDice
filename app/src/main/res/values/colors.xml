@@ -5,7 +5,7 @@
     <color name="colorAccent">#D81B60</color>
 
     //Mis colores
-    <color name="ColorRojo">#FF0000</color>
+    <color name="ColorRojo">#ff0000</color>
     <color name="ColorVerde">#00FF00</color>
     <color name="ColorAzul">#0000FF </color>
     <color name="ColorAmarillo">#FFFF00</color>

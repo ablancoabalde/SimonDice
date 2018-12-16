@@ -6,8 +6,13 @@ import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.*
 import org.jetbrains.anko.toast
+import android.media.MediaPlayer;
 
 class MainActivity : AppCompatActivity() {
+
+    // Creamos distintos objetos MediaPlayer para distintos sonidos especificado para Kotlin
+    lateinit var mpBotones: MediaPlayer
+    lateinit var mpPerdiste: MediaPlayer
 
     // Matriz que guardará la combinación del SimonDice
     var sentencia: MutableList<Int> = mutableListOf<Int>()
@@ -110,6 +115,9 @@ class MainActivity : AppCompatActivity() {
 
     // Función para que el jugador pueda jugar
     fun activarBotones() {
+        // Cargamos el sonido al botón
+       mpBotones=MediaPlayer.create(this,R.raw.jump)
+
         // setText para modo debug para saber en que parte del programa estás, en cada momento
         //txtTRonda.setText("Estas en activarBotones")
 
@@ -118,19 +126,24 @@ class MainActivity : AppCompatActivity() {
 
         // Llamadas al evento OnClickListener de los botones del layout
         btnRed.setOnClickListener() {
+            // Cuándo se pulse el botón sonará
+            mpBotones.start()
             // Llamada a la función interactuar en el cuál se le pasa un Int como parametro para diferenciar cada botón
             interactuar(0)
         }
 
         btnGreen.setOnClickListener() {
+            mpBotones.start()
             interactuar(1)
         }
 
         btnBlue.setOnClickListener() {
+            mpBotones.start()
             interactuar(2)
         }
 
         btnYellow.setOnClickListener() {
+            mpBotones.start()
             interactuar(3)
         }
 
@@ -138,7 +151,7 @@ class MainActivity : AppCompatActivity() {
 
     // Función que recibe un Int que identifica cada botón
     fun interactuar(numB: Int) {
-
+        mpPerdiste=MediaPlayer.create(this,R.raw.dies)
         // setText para modo debug para saber en que parte del programa estás, en cada momento
         //txtTRonda.setText("Estas en interactuar")
 
@@ -153,7 +166,7 @@ class MainActivity : AppCompatActivity() {
             }
             // Si falla en cualquier posición, el programa mostrará un mensaje de que has pedido y llamara a la función reiniciar
         } else {
-
+            mpPerdiste.start()
             toast("Perdiste")
             reiniciar()
 
@@ -167,12 +180,14 @@ class MainActivity : AppCompatActivity() {
 
         // setText para modo debug para saber en que parte del programa estás, en cada momento
         //txtTRonda.setText("Estas en Reiniciar")
-        
+
+        txtTRonda.setText("Perdiste en la ronda " + ronda.toString())
         myJob.cancel()
         ronda = 1
         sentencia.clear()
         sentenciaCopia.clear()
         toast("Reiniciar")
+        mpBotones.release()
     }// Fin Fun reiniciar
 
 }// Fin Main

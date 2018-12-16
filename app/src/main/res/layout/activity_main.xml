@@ -26,6 +26,7 @@
             android:layout_marginEnd="16dp" android:layout_marginBottom="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             android:background="@color/ColorVerde"
+
     />
     <Button
             android:text="@string/blue"
@@ -50,9 +51,7 @@
             app:layout_constraintTop_toBottomOf="@+id/txtTRonda" app:layout_constraintEnd_toStartOf="@+id/btnBlue"
             android:layout_marginEnd="16dp" android:layout_marginBottom="30dp"
             app:layout_constraintBottom_toTopOf="@+id/btnGreen"
-            android:background="@color/ColorRojo"
-
-    />
+            android:background="@color/ColorRojo"/>
     <Button
             android:text="@string/yellow"
             android:layout_width="180dp"
